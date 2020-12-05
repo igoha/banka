@@ -5,7 +5,7 @@ import sys
 counter = 1
 nazov_suboru = sys.argv[1]
 file_ori = open(nazov_suboru)
-file_new = open(nazov_suboru + "_new", "w", encoding="utf-8")
+file_new = open(nazov_suboru.replace(".cfd", "_new.cfd"), "w", encoding="utf-8")
 for line in file_ori:
     if line.startswith("ZK:"):
         # na riadku ZK vymazat koncove medzery
