@@ -1,8 +1,11 @@
 # uprava suborov z odvodmi a mzdami DSI CZ pre import do VUB
-counter = 1
-file_ori = open("DSI_202002_odvody.cfd")
-file_new = open("DSI_202002_odvody_new.cfd", "w", encoding="utf-8")
+import sys
 
+
+counter = 1
+nazov_suboru = sys.argv[1]
+file_ori = open(nazov_suboru)
+file_new = open(nazov_suboru + "_new", "w", encoding="utf-8")
 for line in file_ori:
     if line.startswith("ZK:"):
         # na riadku ZK vymazat koncove medzery
